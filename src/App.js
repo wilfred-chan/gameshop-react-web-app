@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {Container} from "@mui/material";
+import {ThemeProvider} from "@mui/system";
+import theme from "./styles/theme";
+import Header from './components/header';
+import Banner from './components/banner';
+import Products from './components/products';
+
 
 function App() {
+  useEffect(() => {
+    document.title = "GameShop";
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ThemeProvider theme={theme}>
+        <Container maxWidth="xl"
+                   sx ={{
+                     background: '#fff'
+                   }}>
+          <Header />
+          <Banner />
+          <Products />
+
+        </Container>
+      </ThemeProvider>
+
+
   );
 }
 
