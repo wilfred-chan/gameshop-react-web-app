@@ -3,15 +3,21 @@ import {
   HeaderContainer,
   HeaderBar,
   NavLinks,
-  ActionIconsContainer
+
 } from "../../styles/header";
-import {ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
+import {
+  ListItemButton,
+  ListItemIcon,
+  ListItemText
+} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Actions from "./actions";
-export default function Header() {
+import {useUIContext} from "../../context/ui";
 
+export default function Header() {
+  const {setShowSearchBox } = useUIContext();
   return(
-      <ActionIconsContainer>
+
       <HeaderContainer>
         <HeaderBar>
           GameShop
@@ -19,7 +25,7 @@ export default function Header() {
         <NavLinks type = "row">
           <ListItemText primary= "Home"/>
           <ListItemText primary= "Products"/>
-          <ListItemButton>
+          <ListItemButton onClick={() => setShowSearchBox(true)}>
             <ListItemIcon>
               <SearchIcon />
             </ListItemIcon>
@@ -27,6 +33,6 @@ export default function Header() {
         </NavLinks>
         <Actions/>
       </HeaderContainer>
-      </ActionIconsContainer>
+
   );
 }

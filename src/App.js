@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
-import {Container} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
 import {ThemeProvider} from "@mui/system";
 import theme from "./styles/theme";
 import Header from './components/header';
 import Banner from './components/banner';
 import Products from './components/products';
-
+import {UIProvider} from "./context/ui";
+import SearchBox from "./components/search";
 
 function App() {
   useEffect(() => {
@@ -18,10 +19,15 @@ function App() {
                    sx ={{
                      background: '#fff'
                    }}>
+          <UIProvider>
           <Header />
           <Banner />
+          <Box display = "flex" justifyContent={"center"} sx = {{p: 4}}>
+            <Typography variant = "h4">Our Products</Typography>
+          </Box>
           <Products />
-
+            <SearchBox/>
+          </UIProvider>
         </Container>
       </ThemeProvider>
 

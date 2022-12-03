@@ -4,10 +4,11 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Colors } from "../../styles/theme";
-import {NavLinks} from "../../styles/header";
+import {ActionIconsContainer, NavLinks} from "../../styles/header";
 
 export default function Actions() {
   return (
+      <ActionIconsContainer>
       <NavLinks type="row">
         <ListItemButton
             sx={{
@@ -74,5 +75,6 @@ export default function Actions() {
         </ListItemButton>
 
       </NavLinks>
+      </ActionIconsContainer>
   )
 };

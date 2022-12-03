@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import {createTheme, lighten} from "@mui/material/styles";
 
 export const Colors = {
   primary: "#5f2c3e",
@@ -26,6 +26,7 @@ export const Colors = {
   white: "#fff",
   black: "#000",
 };
+export const DrawerWidth = 250;
 
 const theme = createTheme({
   palette: {
@@ -35,6 +36,32 @@ const theme = createTheme({
     secondary: {
       main: Colors.secondary,
     },
-  }
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableRipple: true,
+        disableElevation: true,
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          width: DrawerWidth,
+          background: Colors.primary,
+          color: Colors.secondary,
+          borderRadius: '0px 100px 0px 0px',
+          borderRight: `1px solid ${Colors.primary}`
+        }
+      }
+    },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: lighten(Colors.primary, 0.2)
+        }
+      }
+    },
+  },
 });
 export default theme;

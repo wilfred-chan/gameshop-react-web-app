@@ -1,8 +1,8 @@
 import {styled} from "@mui/material/styles";
 import {Box} from "@mui/system";
-import {Typography, List } from "@mui/material";
+import {Typography, List, IconButton} from "@mui/material";
 import "@fontsource/montez";
-import {Colors} from "../theme";
+import {Colors, DrawerWidth} from "../theme";
 
 export const HeaderContainer = styled(Box)(() => ({
   display: 'flex',
@@ -29,4 +29,11 @@ export const NavLinks = styled(List)(({type}) => ({
 
 export const ActionIconsContainer = styled(Box)(() => ({
   flexGrow: 0,
+}));
+
+export const DrawerCloseButton = styled(IconButton)(() => ({
+  position: 'absolute',
+  top: 10,
+  left: DrawerWidth,
+  zIndex: 1999,
 }));

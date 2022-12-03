@@ -1,4 +1,3 @@
-import { useTheme } from "@mui/system";
 import {
   BannerContainer,
   BannerContent,
@@ -8,8 +7,6 @@ import {
 } from "../../styles/banner";
 
 export default function Banner() {
-  const theme = useTheme();
-
   return (
       <BannerContainer >
 
@@ -22,7 +19,6 @@ export default function Banner() {
           <BannerDescription variant="subtitle">
            Check out what we have!
           </BannerDescription>
-
 
         </BannerContent>
       </BannerContainer>
