@@ -9,6 +9,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import FitScreenIcon from "@mui/icons-material/FitScreen";
 import {useState} from "react";
+import useDialogModal from "../../hooks/useDialogModal";
+import ProductDetail from "../productdetail";
 
 export default function SingleProduct({ product }) {
   const [showOptions, setShowOptions] = useState(false);
@@ -18,6 +20,9 @@ export default function SingleProduct({ product }) {
   const handleMouseLeave = () => {
     setShowOptions(false);
   };
+
+  const [ProductDetailDialog, showProductDetailDialog, closeProductDialog] =
+      useDialogModal(ProductDetail);
 
   return (
       <>
@@ -38,7 +43,7 @@ export default function SingleProduct({ product }) {
                   <ShareIcon color="primary" />
                 </Tooltip>
               </ProductActionButton>
-              <ProductActionButton >
+              <ProductActionButton onClick={() => showProductDetailDialog()}>
                 <Tooltip placement="left" title="Full view">
                   <FitScreenIcon color="primary" />
                 </Tooltip>
@@ -47,6 +52,7 @@ export default function SingleProduct({ product }) {
           </ProductActionsWrapper>
         </Product>
         <ProductMeta product={product} />
+        <ProductDetailDialog product={product} />
       </>
   );
 }
