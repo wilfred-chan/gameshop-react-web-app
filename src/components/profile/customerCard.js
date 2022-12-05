@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 
 const CustomerCard = ({
   profile = {
@@ -15,7 +16,7 @@ const CustomerCard = ({
 }) => {
   return (
     <>
-      <div>
+      <div className="customer-card-flex">
         <div>
           <div>
             <img src={profile.image_url} alt="" />
