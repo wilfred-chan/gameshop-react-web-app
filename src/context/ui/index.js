@@ -7,7 +7,7 @@ export const UIProvider = ({ children }) => {
 
   const [showSearchBox, setShowSearchBox] = useState(false);
   const [cart, setCart] = useState([]);
-  const[showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const value = {
     showSearchBox,
@@ -15,7 +15,7 @@ export const UIProvider = ({ children }) => {
     cart,
     setCart,
     showCart,
-    setShowCart
+    setShowCart,
   };
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>

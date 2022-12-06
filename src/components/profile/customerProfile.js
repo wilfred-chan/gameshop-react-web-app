@@ -1,7 +1,10 @@
 import React from 'react';
 import CustomerCard from './customerCard';
+import CustomerDetails from "./customerDetails";
+import ProfileCart from "../cart/ProfileCart"
 
-const UserProfile = () => {
+const CustomerProfile = () => {
+
   return (
     <div>
       <section>
@@ -9,11 +12,14 @@ const UserProfile = () => {
           <div>
             <CustomerCard />
           </div>
-          <div>{/*  other list*/}</div>
+          <div>
+            <CustomerDetails />
+            {/*<ProfileCart />*/}
+          </div>
         </div>
       </section>
     </div>
   );
 };
 
-export default UserProfile;
+export default CustomerProfile;
