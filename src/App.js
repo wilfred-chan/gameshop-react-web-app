@@ -7,6 +7,7 @@ import Banner from './components/banner';
 import Products from './components/products';
 import {UIProvider} from "./context/ui";
 import SearchBox from "./components/search";
+import Cart from "./components/cart";
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
             <Typography variant = "h4">Our Products</Typography>
           </Box>
           <Products />
+            <Cart />
             <SearchBox/>
           </UIProvider>
         </Container>

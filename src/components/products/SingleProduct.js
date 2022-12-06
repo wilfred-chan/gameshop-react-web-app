@@ -11,6 +11,7 @@ import FitScreenIcon from "@mui/icons-material/FitScreen";
 import {useState} from "react";
 import useDialogModal from "../../hooks/useDialogModal";
 import ProductDetail from "../productdetail";
+import useCart from "../../hooks/useCart";
 
 export default function SingleProduct({ product }) {
   const [showOptions, setShowOptions] = useState(false);
@@ -20,6 +21,9 @@ export default function SingleProduct({ product }) {
   const handleMouseLeave = () => {
     setShowOptions(false);
   };
+  
+  const {addToCart, addToCartText} = useCart(product);
+
 
   const [ProductDetailDialog, showProductDetailDialog, closeProductDialog] =
       useDialogModal(ProductDetail);
@@ -32,8 +36,10 @@ export default function SingleProduct({ product }) {
             <FavoriteIcon />
           </ProductFavButton>
           {(showOptions) && (
-              <ProductAddToCart show={showOptions} variant="contained">
-                Add to cart
+              <ProductAddToCart
+                  onClick ={addToCart}
+                  show={showOptions} variant="contained">
+                {addToCartText}
               </ProductAddToCart>
           )}
           <ProductActionsWrapper show={showOptions}>
