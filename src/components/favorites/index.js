@@ -53,9 +53,6 @@ export default function Favorites() {
                        sc ={{mt :2, width : '90%', padding :4,}}>
                     {favoritesContent}
                 </Paper>
-                <Button sx = {{mt : 4}} variant="contained">
-                    Proceed to payment
-                </Button>
             </Box>
         </Drawer>
     );
