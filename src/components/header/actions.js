@@ -9,7 +9,7 @@ import {useUIContext} from "../../context/ui";
 import {Badge} from "@mui/material";
 
 export default function Actions() {
-  const {cart, setShowCart} = useUIContext();
+  const {cart, setShowCart, favorites, setShowFavorites} = useUIContext();
   return (
       <ActionIconsContainer>
       <NavLinks type="row">
@@ -43,7 +43,9 @@ export default function Actions() {
                 color: Colors.secondary,
               }}
           >
-            <FavoriteIcon />
+              <Badge badgeContent = {favorites && favorites.length} color = "secondary">
+                  <FavoriteIcon onClick={() => setShowFavorites(true)}/>
+              </Badge>
           </ListItemIcon>
         </ListItemButton>
         <Divider orientation="vertical" flexItem />

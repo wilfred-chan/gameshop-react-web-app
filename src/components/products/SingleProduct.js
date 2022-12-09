@@ -12,6 +12,7 @@ import {useState} from "react";
 import useDialogModal from "../../hooks/useDialogModal";
 import ProductDetail from "../productdetail";
 import useCart from "../../hooks/useCart";
+import useFavorites from "../../hooks/useFavorites";
 
 export default function SingleProduct({ product }) {
   const [showOptions, setShowOptions] = useState(false);
@@ -24,6 +25,8 @@ export default function SingleProduct({ product }) {
   
   const {addToCart, addToCartText} = useCart(product);
 
+  const {addToFavorites, isAdded} = useFavorites(product);
+
 
   const [ProductDetailDialog, showProductDetailDialog, closeProductDialog] =
       useDialogModal(ProductDetail);
@@ -33,7 +36,7 @@ export default function SingleProduct({ product }) {
         <Product onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <ProductImage src={product.image} />
           <ProductFavButton isfav={0}>
-            <FavoriteIcon />
+            <FavoriteIcon onClick={addToFavorites} />
           </ProductFavButton>
           {(showOptions) && (
               <ProductAddToCart

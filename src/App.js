@@ -8,7 +8,8 @@ import Products from './components/products';
 import {UIProvider} from "./context/ui";
 import SearchBox from "./components/search";
 import Cart from "./components/cart";
-import LoginPage from "./components/login";
+import Favorites from "./components/favorites/index"
+// import LoginPage from "./components/login";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           </Box>
           <Products />
             <Cart />
+            <Favorites />
             <SearchBox/>
           </UIProvider>
         </Container>
