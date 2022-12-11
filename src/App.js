@@ -9,6 +9,7 @@ import {UIProvider} from "./context/ui";
 import SearchBox from "./components/search";
 import Cart from "./components/cart";
 import Favorites from "./components/favorites/index"
+import RegisterPage from "./components/register";
 // import LoginPage from "./components/login";
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
           </UIProvider>
         </Container>
       </ThemeProvider>
-      // <LoginPage/>
+
 
 
   );
