@@ -52,7 +52,7 @@ const RegisterForm = () => {
               spacing={2}
               direction="column"
               justifyContent="space-around"
-              style={{ minHeight: "100vh", marginLeft : 180 }}
+              style={{ minHeight: "100vh", marginLeft: 0, marginTop: 10 }}
           >
             <Paper elelvation={2} sx={{ padding: 5 }}>
               <form>

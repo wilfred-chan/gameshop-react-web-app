@@ -22,7 +22,7 @@ const RegisterPage = () => {
             p="1rem"
             m="2rem auto"
             borderRadius="1.5rem"
-            backgroundColor={Colors.secondary}
+            backgroundColor={Colors.white}
         >
           <Typography fontWeight="500" variant="h5" sx={{ textAlign: "center" }}>
             Register
