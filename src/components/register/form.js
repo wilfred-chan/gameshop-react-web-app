@@ -8,20 +8,25 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "@emotion/styled";
 import {Colors} from "../../styles/theme";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import AvatarUpload from "./AvatarUpload";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { UserContext } from "../../context/user";
 
-
+const BASE_URL = "https://gameshop.herokuapp.com/api/";
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
+  const {user, setUser} = useContext(UserContext);
+
   const [values, setValues] = useState({
-    userName: "",
-    firstName: "",
-    lastName: "",
+    username: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     role: "",
@@ -48,6 +53,19 @@ const RegisterForm = () => {
       [e.target.name]: e.target.value,
     });
   }
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(values);
+    try {
+      const result = await axios.post(BASE_URL + "register", values);
+      console.log("Register success!");
+      setUser({...result.data, loggedIn: true});
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
       <div>
@@ -68,8 +86,8 @@ const RegisterForm = () => {
                 >
                   <TextField
                       label="First Name"
-                      value={values.firstName}
-                      name="firstName"
+                      value={values.firstname}
+                      name="firstname"
                       placeholder="First name"
                       required
                       sx={{ gridColumn: "span 2" }}
@@ -77,8 +95,8 @@ const RegisterForm = () => {
                   />
                   <TextField
                       label="Last Name"
-                      value={values.lastName}
-                      name="lastName"
+                      value={values.lastname}
+                      name="lastname"
                       placeholder="Last name"
                       required
                       sx={{ gridColumn: "span 2" }}
@@ -136,11 +154,12 @@ const RegisterForm = () => {
                   <TextField
                       label = "username"
                       fullWidth
-                      value={values.userName}
-                      name = "userName"
+                      value={values.username}
+                      name = "username"
                       placeholder="Username"
                       sx={{ gridColumn: "span 4" }}
                       onChange={handleChange}
+                      required
                   />
                   <TextField
                       label = "email"
@@ -185,7 +204,7 @@ const RegisterForm = () => {
 
 
                   <Grid item>
-                    <Button type="submit" fullWidth variant="contained">
+                    <Button type="submit" fullWidth variant="contained" onClick={handleSubmit}>
                       Sign In
                     </Button>
                   </Grid>
