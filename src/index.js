@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/login';
+import { UserContextProvider } from './context/user';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<App />} />
-        <Route path="login" element={<LoginPage />} />
-      </Routes>
+      <UserContextProvider>
+        <Routes>
+          <Route path="/*" element={<App />} />
+          <Route path="login" element={<LoginPage />} />
+        </Routes>
+      </UserContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

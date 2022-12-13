@@ -8,9 +8,12 @@ import {ActionIconsContainer, NavLinks} from "../../styles/header";
 import {useUIContext} from "../../context/ui";
 import {Badge} from "@mui/material";
 import {Link} from "react-router-dom";
+import { UserContext } from "../../context/user";
+import { useContext } from "react";
 
 export default function Actions() {
-  const {cart, setShowCart, favorites, setShowFavorites, user} = useUIContext();
+  const {user} = useContext(UserContext);
+  const {cart, setShowCart, favorites, setShowFavorites} = useUIContext();
   return (
       <ActionIconsContainer>
       <NavLinks type="row">
@@ -63,11 +66,10 @@ export default function Actions() {
               }}
           >
              <Link to={'login'}><PersonIcon /></Link>
-             {/* <PersonIcon /> */}
           </ListItemIcon>
         </ListItemButton>
         <Divider orientation="vertical" flexItem />
-        {Object.keys(user).length > 0 &&
+        {user.loggedIn &&
           <ListItemButton
               sx={{
                 justifyContent: "center",

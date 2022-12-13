@@ -9,16 +9,18 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "@material-ui/core/Link";
 import RegisterPage from "../register";
 import axios from "axios";
-import { useUIContext } from "../../context/ui";
+import { UserContext } from "../../context/user";
+import { useNavigate } from "react-router-dom";
 
 const BASE_URL = "https://gameshop.herokuapp.com/api/";
 
 const LoginForm = () => {
-  const {user, setUser} = useUIContext();
+  const navigate = useNavigate();
+  const {user, setUser} = useContext(UserContext);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -49,8 +51,10 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.post(BASE_URL + 'login', {...values});
-      console.log(result);
+      const result = await axios.post(BASE_URL + 'login', values);
+      console.log("Logging success!");
+      setUser({...result.data, loggedIn: true});
+      navigate('/');
     } catch (err) {
       console.log(err);
     }
