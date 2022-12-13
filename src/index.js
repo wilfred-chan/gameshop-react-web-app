@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/login';
 import { UserContextProvider } from './context/user';
+import RegisterPage from './components/register';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Routes>
           <Route path="/*" element={<App />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
         </Routes>
       </UserContextProvider>
     </BrowserRouter>
