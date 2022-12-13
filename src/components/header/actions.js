@@ -54,21 +54,23 @@ export default function Actions() {
           </ListItemIcon>
         </ListItemButton>
         <Divider orientation="vertical" flexItem />
-        <ListItemButton
-            sx={{
-              justifyContent: "center",
-            }}
-        >
-          <ListItemIcon
+        <Link to={`${user.loggedIn ? 'profile':'login'}`}>
+          <ListItemButton
               sx={{
-                display: "flex",
                 justifyContent: "center",
-                color: Colors.secondary,
               }}
           >
-             <Link to={'login'}><PersonIcon /></Link>
-          </ListItemIcon>
-        </ListItemButton>
+            <ListItemIcon
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: Colors.secondary,
+                }}
+            >
+              <PersonIcon />
+            </ListItemIcon>
+          </ListItemButton>
+        </Link>
         <Divider orientation="vertical" flexItem />
         {user.loggedIn &&
           <ListItemButton
