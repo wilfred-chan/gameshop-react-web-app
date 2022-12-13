@@ -37,7 +37,7 @@ const LoginForm = () => {
               spacing={2}
               direction="column"
               justifyContent="center"
-              style={{ minHeight: "100vh" }}
+              style={{ minHeight: "50vh" }}
           >
             <Paper elelvation={2} sx={{ padding: 5 }}>
               <form>
