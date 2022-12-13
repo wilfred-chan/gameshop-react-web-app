@@ -12,13 +12,16 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import React, { useState } from "react";
 import Link from "@material-ui/core/Link";
 import RegisterPage from "../register";
+import axios from "axios";
+import { useUIContext } from "../../context/ui";
 
-
+const BASE_URL = "https://gameshop.herokuapp.com/api/";
 
 const LoginForm = () => {
+  const {user, setUser} = useUIContext();
   const [values, setValues] = useState({
     email: "",
-    pass: "",
+    password: "",
     showPass: false,
   });
 
@@ -27,6 +30,30 @@ const LoginForm = () => {
       ...values,
       showPass: !values.showPass,
     });
+  };
+
+  const handleEmailChange = (e) => {
+    setValues({
+      ...values,
+      email: e.target.value,
+    });
+  };
+
+  const handlePasswordChange = (e) => {
+    setValues({
+      ...values,
+      password: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await axios.post(BASE_URL + 'login', {...values});
+      console.log(result);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -49,6 +76,7 @@ const LoginForm = () => {
                         label="Enter your email"
                         placeholder="Email Address"
                         variant="outlined"
+                        value={values.email} onChange={handleEmailChange}
                         required
                     />
                   </Grid>
@@ -74,11 +102,12 @@ const LoginForm = () => {
                               </InputAdornment>
                           ),
                         }}
+                        value={values.password} onChange={handlePasswordChange}
                     />
                   </Grid>
 
                   <Grid item>
-                    <Button type="submit" fullWidth variant="contained">
+                    <Button type="submit" fullWidth variant="contained" onClick={handleSubmit}>
                       Sign In
                     </Button>
                   </Grid>
