@@ -9,7 +9,7 @@ import {useUIContext} from "../../context/ui";
 import {Badge} from "@mui/material";
 
 export default function Actions() {
-  const {cart, setShowCart, favorites, setShowFavorites} = useUIContext();
+  const {cart, setShowCart, favorites, setShowFavorites, user} = useUIContext();
   return (
       <ActionIconsContainer>
       <NavLinks type="row">
@@ -65,21 +65,23 @@ export default function Actions() {
           </ListItemIcon>
         </ListItemButton>
         <Divider orientation="vertical" flexItem />
-        <ListItemButton
-            sx={{
-              justifyContent: "center",
-            }}
-        >
-          <ListItemIcon
+        {Object.keys(user).length > 0 &&
+          <ListItemButton
               sx={{
-                display: "flex",
                 justifyContent: "center",
-                color: Colors.secondary,
               }}
           >
-            <LogoutIcon />
-          </ListItemIcon>
-        </ListItemButton>
+            <ListItemIcon
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: Colors.secondary,
+                }}
+            >
+              <LogoutIcon />
+            </ListItemIcon>
+          </ListItemButton>
+        }
 
       </NavLinks>
       </ActionIconsContainer>
