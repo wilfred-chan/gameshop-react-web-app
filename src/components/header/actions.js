@@ -22,6 +22,7 @@ export default function Actions() {
             sx={{
               justifyContent: "center",
             }}
+            onClick={() => setShowCart(true)}
         >
           <ListItemIcon
               sx={{
@@ -31,7 +32,7 @@ export default function Actions() {
               }}
           >
             <Badge badgeContent = {cart && cart.length} color = "secondary">
-            <ShoppingCartIcon onClick={() => setShowCart(true)}/>
+            <ShoppingCartIcon/>
             </Badge>
           </ListItemIcon>
         </ListItemButton>
