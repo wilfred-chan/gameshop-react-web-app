@@ -74,6 +74,7 @@ export default function Actions() {
         <Divider orientation="vertical" flexItem />
         {user.loggedIn &&
           <ListItemButton
+              onClick={() => window.location.reload()}
               sx={{
                 justifyContent: "center",
               }}
@@ -85,7 +86,7 @@ export default function Actions() {
                   color: Colors.secondary,
                 }}
             >
-              <LogoutIcon onClick={() => window.location.reload()}/>
+              <LogoutIcon />
             </ListItemIcon>
           </ListItemButton>
         }
