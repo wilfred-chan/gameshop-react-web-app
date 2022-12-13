@@ -10,11 +10,9 @@ import {
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import React, { useState, useContext } from "react";
-import Link from "@material-ui/core/Link";
-import RegisterPage from "../register";
 import axios from "axios";
 import { UserContext } from "../../context/user";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const BASE_URL = "https://gameshop.herokuapp.com/api/";
 
@@ -115,11 +113,11 @@ const LoginForm = () => {
                       Sign In
                     </Button>
                   </Grid>
-                  {/* <Grid item>
+                  <Grid item>
                     <Typography sx={{ lineHeight: 2 }} variant="body1">
-                      Don't have an account? <Link component={RegisterPage}>Register</Link>
+                      Don't have an account? <Link to={'/register'}>Register</Link>
                     </Typography>
-                  </Grid> */}
+                  </Grid>
                 </Grid>
               </form>
             </Paper>
