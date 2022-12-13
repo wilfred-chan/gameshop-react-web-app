@@ -34,7 +34,7 @@ export default function SingleProduct({ product }) {
   return (
       <>
         <Product onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <ProductImage src={product.image} />
+          <ProductImage src={product.cover_image} />
           <ProductFavButton isfav={0}>
             <FavoriteIcon onClick={addToFavorites} />
           </ProductFavButton>

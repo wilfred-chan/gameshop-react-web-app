@@ -56,7 +56,7 @@ export default function ProductDetail({ open, onClose, product }) {
               alignItems="center"
               justifyContent={"space-between"}
           >
-            {product.name}
+            {product.title}
             <IconButton onClick={onClose}>
               <CloseIcon />
             </IconButton>
@@ -65,13 +65,13 @@ export default function ProductDetail({ open, onClose, product }) {
         <DialogContent>
           <ProductDetailWrapper display={"flex"} flexDirection={matches ? "column" : "row"}>
             <Product sx={{ mr: 4 }}>
-              <ProductImage src={product.image} />
+              <ProductImage src={product.cover_image} />
             </Product>
             <ProductDetailInfoWrapper>
 
               <Typography variant="subtitle">Availability: 5 in stock</Typography>
               <Typography sx={{ lineHeight: 2 }} variant="h4">
-                {product.name}
+                {product.title}
               </Typography>
               <Typography variant="body">
                 {product.description}
