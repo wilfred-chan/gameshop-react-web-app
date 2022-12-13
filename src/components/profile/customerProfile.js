@@ -2,11 +2,15 @@ import React from 'react';
 import CustomerCard from './customerCard';
 import CustomerDetails from "./customerDetails";
 import ProfileCart from "../cart/ProfileCart"
+import { Link } from 'react-router-dom';
 
 const CustomerProfile = () => {
 
   return (
     <div>
+      <header>
+        <Link to="/"><button>Back to Home</button></Link>
+      </header>
       <section>
         <div>
           <div>
