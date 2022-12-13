@@ -23,11 +23,9 @@ const RegisterForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    pass: "",
+    password: "",
     role: "",
-    bio: "",
-    loc: "",
-    avatar: "",
+    location: "",
     showPass: false,
   });
 
@@ -43,6 +41,13 @@ const RegisterForm = () => {
     justifyContent: "space-between",
     alignItems: "center",
   });
+
+  const handleChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  }
 
   return (
       <div>
@@ -68,14 +73,16 @@ const RegisterForm = () => {
                       placeholder="First name"
                       required
                       sx={{ gridColumn: "span 2" }}
+                      onChange={handleChange}
                   />
                   <TextField
                       label="Last Name"
-                      value={values.firstName}
+                      value={values.lastName}
                       name="lastName"
                       placeholder="Last name"
                       required
                       sx={{ gridColumn: "span 2" }}
+                      onChange={handleChange}
                   />
                   <TextField
                       label="Location"
@@ -83,6 +90,7 @@ const RegisterForm = () => {
                       name="location"
                       placeholder="Location"
                       sx={{ gridColumn: "span 4" }}
+                      onChange={handleChange}
                   />
                   {/* <TextField
                       label="Role"
@@ -132,6 +140,7 @@ const RegisterForm = () => {
                       name = "userName"
                       placeholder="Username"
                       sx={{ gridColumn: "span 4" }}
+                      onChange={handleChange}
                   />
                   <TextField
                       label = "email"
@@ -141,6 +150,7 @@ const RegisterForm = () => {
                       name = "email"
                       placeholder="Email Address"
                       sx={{ gridColumn: "span 4" }}
+                      onChange={handleChange}
                   />
                   <TextField
                       type={values.showPass ? "text" : "password"}
@@ -148,6 +158,7 @@ const RegisterForm = () => {
                       value={values.pass}
                       label="Password"
                       placeholder="Password"
+                      name = "password"
                       variant="outlined"
                       required
                       sx={{ gridColumn: "span 4" }}
@@ -164,6 +175,7 @@ const RegisterForm = () => {
                             </InputAdornment>
                         ),
                       }}
+                      onChange={handleChange}
                   />
                   <Grid item>
                     <Typography sx={{ lineHeight: 2,}} variant="body1" >
