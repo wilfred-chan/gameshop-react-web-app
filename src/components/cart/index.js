@@ -13,13 +13,13 @@ import {useUIContext} from "../../context/ui";
 export default function Cart() {
   const {cart, setShowCart, showCart} = useUIContext();
   const cartContent = cart.map(item => (
-      <Box key = {item.id}>
+      <Box key = {item.game_id}>
         <Box display="flex" sx ={{pt:2, pb : 2}}
              alignItems="start"
              justifyContent={"space-between"}>
-          <Avatar src = {item.image} sx ={{width : 96, height :96, mr : 2}} />
+          <Avatar src = {item.cover_image} sx ={{width : 96, height :96, mr : 2}} />
           <Box display="flex" flexDirection={"column"}>
-            <Typography variant="h6">{item.name}</Typography>
+            <Typography variant="h6">{item.title}</Typography>
             <Typography variant="subtitle2">{item.description}</Typography>
           </Box>
           <Typography variant="body1" justifyContent={"end"}>${item.price}</Typography>
