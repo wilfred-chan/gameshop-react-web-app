@@ -9,11 +9,11 @@ import {
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import React, { useState } from "react";
-import Link from "@material-ui/core/Link";
 import styled from "@emotion/styled";
 import {Colors} from "../../styles/theme";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import AvatarUpload from "./AvatarUpload";
+import { Link } from "react-router-dom";
 
 
 
@@ -84,13 +84,13 @@ const RegisterForm = () => {
                       placeholder="Location"
                       sx={{ gridColumn: "span 4" }}
                   />
-                  <TextField
+                  {/* <TextField
                       label="Role"
                       value={values.loc}
                       name="role"
                       placeholder="Role"
                       sx={{ gridColumn: "span 4" }}
-                  />
+                  /> */}
                   <Box
                       gridColumn="span 4"
                       border={`1px solid ${Colors.light_gray}`}
@@ -126,6 +126,14 @@ const RegisterForm = () => {
                     <AvatarUpload />
                   </Box>
                   <TextField
+                      label = "username"
+                      fullWidth
+                      value={values.userName}
+                      name = "userName"
+                      placeholder="Username"
+                      sx={{ gridColumn: "span 4" }}
+                  />
+                  <TextField
                       label = "email"
                       type="email"
                       fullWidth
@@ -159,10 +167,8 @@ const RegisterForm = () => {
                   />
                   <Grid item>
                     <Typography sx={{ lineHeight: 2,}} variant="body1" >
-                      Already have an account? <Link>Login</Link>
+                      Already have an account? <Link to="/login">Login</Link>
                     </Typography>
-
-                    {/*<Link to="/register">Register</Link>*/}
                   </Grid>
 
 
