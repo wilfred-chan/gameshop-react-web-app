@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/login';
 import { UserContextProvider } from './context/user';
 import RegisterPage from './components/register';
+import ProfileScreen from './components/profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
           <Route path="/*" element={<App />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="profile" element={<ProfileScreen />} />
         </Routes>
       </UserContextProvider>
     </BrowserRouter>
