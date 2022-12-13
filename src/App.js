@@ -36,9 +36,6 @@ function App() {
           </UIProvider>
         </Container>
       </ThemeProvider>
-
-
-
   );
 }
 
