@@ -82,13 +82,11 @@ const LoginForm = () => {
                       Sign In
                     </Button>
                   </Grid>
-                  <Grid item>
+                  {/* <Grid item>
                     <Typography sx={{ lineHeight: 2 }} variant="body1">
                       Don't have an account? <Link component={RegisterPage}>Register</Link>
                     </Typography>
-
-                    {/*<Link to="/register">Register</Link>*/}
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </form>
             </Paper>

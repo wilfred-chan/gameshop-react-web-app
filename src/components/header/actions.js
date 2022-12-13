@@ -7,6 +7,7 @@ import { Colors } from "../../styles/theme";
 import {ActionIconsContainer, NavLinks} from "../../styles/header";
 import {useUIContext} from "../../context/ui";
 import {Badge} from "@mui/material";
+import {Link} from "react-router-dom";
 
 export default function Actions() {
   const {cart, setShowCart, favorites, setShowFavorites, user} = useUIContext();
@@ -61,7 +62,8 @@ export default function Actions() {
                 color: Colors.secondary,
               }}
           >
-            <PersonIcon />
+             <Link to={'login'}><PersonIcon /></Link>
+             {/* <PersonIcon /> */}
           </ListItemIcon>
         </ListItemButton>
         <Divider orientation="vertical" flexItem />
