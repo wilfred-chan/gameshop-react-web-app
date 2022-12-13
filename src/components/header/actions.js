@@ -10,9 +10,10 @@ import {Badge} from "@mui/material";
 import {Link} from "react-router-dom";
 import { UserContext } from "../../context/user";
 import { useContext } from "react";
+import { SettingsSuggestRounded } from "@mui/icons-material";
 
 export default function Actions() {
-  const {user} = useContext(UserContext);
+  const {user, setUser} = useContext(UserContext);
   const {cart, setShowCart, favorites, setShowFavorites} = useUIContext();
   return (
       <ActionIconsContainer>
@@ -82,7 +83,7 @@ export default function Actions() {
                   color: Colors.secondary,
                 }}
             >
-              <LogoutIcon />
+              <LogoutIcon onClick={() => window.location.reload()}/>
             </ListItemIcon>
           </ListItemButton>
         }
