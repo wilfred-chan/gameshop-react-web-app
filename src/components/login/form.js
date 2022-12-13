@@ -9,16 +9,21 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "@material-ui/core/Link";
 import RegisterPage from "../register";
+import axios from "axios";
+import { UserContext } from "../../context/user";
+import { useNavigate } from "react-router-dom";
 
-
+const BASE_URL = "https://gameshop.herokuapp.com/api/";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const {user, setUser} = useContext(UserContext);
   const [values, setValues] = useState({
     email: "",
-    pass: "",
+    password: "",
     showPass: false,
   });
 
@@ -29,6 +34,32 @@ const LoginForm = () => {
     });
   };
 
+  const handleEmailChange = (e) => {
+    setValues({
+      ...values,
+      email: e.target.value,
+    });
+  };
+
+  const handlePasswordChange = (e) => {
+    setValues({
+      ...values,
+      password: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await axios.post(BASE_URL + 'login', values);
+      console.log("Logging success!");
+      setUser({...result.data, loggedIn: true});
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
       <div>
         <Container maxWidth="sm">
@@ -37,7 +68,7 @@ const LoginForm = () => {
               spacing={2}
               direction="column"
               justifyContent="center"
-              style={{ minHeight: "100vh" }}
+              style={{ minHeight: "50vh" }}
           >
             <Paper elelvation={2} sx={{ padding: 5 }}>
               <form>
@@ -49,6 +80,7 @@ const LoginForm = () => {
                         label="Enter your email"
                         placeholder="Email Address"
                         variant="outlined"
+                        value={values.email} onChange={handleEmailChange}
                         required
                     />
                   </Grid>
@@ -74,21 +106,20 @@ const LoginForm = () => {
                               </InputAdornment>
                           ),
                         }}
+                        value={values.password} onChange={handlePasswordChange}
                     />
                   </Grid>
 
                   <Grid item>
-                    <Button type="submit" fullWidth variant="contained">
+                    <Button type="submit" fullWidth variant="contained" onClick={handleSubmit}>
                       Sign In
                     </Button>
                   </Grid>
-                  <Grid item>
+                  {/* <Grid item>
                     <Typography sx={{ lineHeight: 2 }} variant="body1">
                       Don't have an account? <Link component={RegisterPage}>Register</Link>
                     </Typography>
-
-                    {/*<Link to="/register">Register</Link>*/}
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </form>
             </Paper>

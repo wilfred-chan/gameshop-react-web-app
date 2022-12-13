@@ -1,10 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from 'react';
 
 export const UIContext = createContext({});
 export const useUIContext = () => useContext(UIContext);
 
 export const UIProvider = ({ children }) => {
-
   const [showSearchBox, setShowSearchBox] = useState(false);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
@@ -24,5 +23,5 @@ export const UIProvider = ({ children }) => {
     setShowFavorites,
   };
 
-  return <UIContext.Provider value={value}>{children}</UIContext.Provider>
-}
+  return <UIContext.Provider value={value}>{children}</UIContext.Provider>;
+};
