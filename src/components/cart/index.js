@@ -37,7 +37,6 @@ export default function Cart() {
         </Typography>
       </Box>
     </Drawer>)
-  } else {
   }
 
   const cartContent = cart.map(item => (
