@@ -21,7 +21,11 @@
 }
 
 .cart-card{
+    width: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    display: flex;
     text-align: center;
+    flex-flow: column;
 }
 
 .cart-card img {
