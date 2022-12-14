@@ -21,9 +21,10 @@ const EditProfileItem = ({ profile }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
-      firstname: e.target.firstname.value,
-      bio: e.target.bio.value,
-      location: e.target.location.value,
+      firstname: values.firstname,
+      lastname: values.lastname,
+      bio: values.bio,
+      location: values.location,
     };
     axios
       .put(BASE_URL + user.username, data)
