@@ -15,7 +15,7 @@ const CustomerCard = ({
           <div>
             <img src={user.image_url} alt="" />
           </div>
-          <h3>{user.username}</h3>
+          <h3>{user.lastname} {user.firstname}</h3>
           <span className="badge bg-warning text-dark">{user.role}</span>
           <div className="p-3 mb-2 bg-light text-dark">{user.bio}</div>
           {/*<p className="text-black">{user.bio}</p>*/}
