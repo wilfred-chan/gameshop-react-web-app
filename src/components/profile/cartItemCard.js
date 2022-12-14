@@ -10,14 +10,14 @@ const CartItemCard = ({
                       }) => {
     return (
         <>
-            <div>
+            <div className="cart-card">
                 <div>
-                    <h4>{game.title}</h4>
                     <div>
                         <img src={game.image_url} alt="" />
                     </div>
-                    <span>{game.price}</span>
-                    <button>Details</button>
+                    <h4>{game.title}</h4>
+                    <div>${game.price}</div>
+                    <button className="btn btn-info">Details</button>
                 </div>
             </div>
         </>

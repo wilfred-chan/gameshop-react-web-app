@@ -19,3 +19,14 @@
 .customer-details span {
     height: 100rem;
 }
+
+.cart-card{
+    text-align: center;
+}
+
+.cart-card img {
+    height: 24rem;
+    width: 16rem;
+    margin-bottom: 2rem;
+    border: 5px solid black;
+}
