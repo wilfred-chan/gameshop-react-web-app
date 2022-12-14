@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const StockButton = ({ game }) => {
   if (game.in_stock) {
-    return <Link to={`product/${game.game_id}`}><Button variant="contained">In Stock</Button></Link>;
+    return <Link to={`/product/${game.game_id}`}><Button variant="contained">In Stock</Button></Link>;
   } else {
     return (
       <Button variant="contained" disabled>
