@@ -44,7 +44,7 @@ const ProductPage = () => {
                 </div>
 
                 <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-                    {game.screenshots.map((item) => (
+                    {game.screenshots && game.screenshots.map((item) => (
                         <ImageListItem key={item.img}>
                             <img
                                 src={`${item}?w=164&h=164&fit=crop&auto=format`}
