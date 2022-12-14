@@ -12,6 +12,7 @@ import ProfileScreen from './components/profile';
 import EditProfile from './components/editProfile/EditProfile';
 import ProductPage from "./components/productPage/ProductPage";
 import AdminPage from './components/admin';
+import SearchPage from './components/search/searchPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,7 @@ ReactDOM.render(
             <Route path="edit_profile" element={<EditProfile />} />
             <Route path="product/:game_id" element={<ProductPage />} />
             <Route path="admin" element={<AdminPage />} />
+            <Route path="search" element={<SearchPage />} />
           </Routes>
         </UIProvider>
       </UserContextProvider>
