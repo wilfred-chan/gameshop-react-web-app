@@ -24,7 +24,6 @@ function App() {
                    sx ={{
                      background: '#fff'
                    }}>
-          <UIProvider>
           <Header />
           <Banner />
           <Box display = "flex" justifyContent={"center"} sx = {{p: 4}}>
@@ -34,7 +33,6 @@ function App() {
             <Cart />
             <Favorites />
             <SearchBox/>
-          </UIProvider>
         </Container>
       </ThemeProvider>
   );
