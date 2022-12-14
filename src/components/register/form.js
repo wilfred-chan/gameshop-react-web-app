@@ -29,7 +29,7 @@ const RegisterForm = () => {
     lastname: "",
     email: "",
     password: "",
-    role: "",
+    role: "customer",
     location: "",
     showPass: false,
   });
@@ -205,7 +205,7 @@ const RegisterForm = () => {
 
                   <Grid item>
                     <Button type="submit" fullWidth variant="contained" onClick={handleSubmit}>
-                      Sign In
+                      Register
                     </Button>
                   </Grid>
 
