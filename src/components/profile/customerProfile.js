@@ -5,7 +5,6 @@ import ProfileCart from "../cart/ProfileCart"
 import { Link } from 'react-router-dom';
 
 const CustomerProfile = () => {
-
   return (
     <div>
       <header>
