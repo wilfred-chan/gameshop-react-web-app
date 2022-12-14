@@ -1,5 +1,7 @@
 import React from 'react';
+import ProductPage from "../productPage/ProductPage";
 import '../profile/index.css'
+import {Link} from "react-router-dom";
 
 const CartItemCard = ({
                           game = {
@@ -18,7 +20,11 @@ const CartItemCard = ({
                     </div>
                     <h4>{game.title}</h4>
                     <div>${game.price}</div>
-                    <button className="btn btn-info">Details</button>
+
+                    <Link to={`/product/${game.game_id}`}>
+                        <button className="btn btn-info">Details</button>
+                    </Link>
+
                 </div>
             </div>
         </>

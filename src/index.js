@@ -10,6 +10,7 @@ import { UIProvider } from './context/ui';
 import RegisterPage from './components/register';
 import ProfileScreen from './components/profile';
 import EditProfile from './components/editProfile/EditProfile';
+import ProductPage from "./components/productPage/ProductPage";
 import AdminPage from './components/admin';
 
 ReactDOM.render(
@@ -23,6 +24,7 @@ ReactDOM.render(
             <Route path="register" element={<RegisterPage />} />
             <Route path="profile" element={<ProfileScreen />} />
             <Route path="edit_profile" element={<EditProfile />} />
+            <Route path="product/:game_id" element={<ProductPage />} />
             <Route path="admin" element={<AdminPage />} />
           </Routes>
         </UIProvider>
