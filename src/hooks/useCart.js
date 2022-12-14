@@ -26,20 +26,20 @@ function useCart(product) {
     } else {
       if (cart.findIndex(c =>c.game_id === product.game_id) >= 0) {
         // remove a game
-        const currentCart = cart.map(game => game.game_id);
-        const newCart = currentCart.filter(game => game !== product.game_id);
         setCart(cart.filter(c =>c.game_id !== product.game_id));
+        const newCart = cart.map(game => game.game_id).filter(game => game !== product.game_id);
         axios.put(BASE_URL + user.username, {cart: newCart})
-          .then(res => setUser({...user, cart: res.data.cart}))
+          .then(res => console.log(res))
           .catch(e => console.error(e));
       } else {
         // add a game
-        const currentCart = cart.map(game => game.game_id);
-        console.log(currentCart);
         setCart(c =>[...c,product]);
+        const newCart = [...cart.map(game => game.game_id), product.game_id];
+        axios.put(BASE_URL + user.username, {cart: newCart})
+          .then(res => console.log(res))
+          .catch(e => console.error(e));
       }
     }
-    
   }
 
   const addToCartText = cart.findIndex(c =>c.game_id === product.game_id) >= 0
