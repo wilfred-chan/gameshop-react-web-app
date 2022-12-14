@@ -2,7 +2,7 @@ import React from 'react';
 import CustomerCard from './customerCard';
 import CustomerDetails from "./customerDetails";
 import { Link } from 'react-router-dom';
-import CustomerCart from "./customerCart";
+import CustomerCart from "../cart/customerCart";
 
 const CustomerProfile = () => {
     return (

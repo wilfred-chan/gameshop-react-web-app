@@ -1,12 +1,12 @@
 import React from 'react';
-import './index.css'
+import '../profile/index.css'
 
 const CartItemCard = ({
                           game = {
                               game_id: 'the-witcher-3-wild-hunt',
                               title: 'The Witcher 3: Wild Hunt',
                               price: '39.99',
-                              image_url: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg',
+                              cover_image: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg',
                           },
                       }) => {
     return (
@@ -14,7 +14,7 @@ const CartItemCard = ({
             <div className="cart-card">
                 <div>
                     <div>
-                        <img src={game.image_url} alt="" />
+                        <img src={game.cover_image} alt="" />
                     </div>
                     <h4>{game.title}</h4>
                     <div>${game.price}</div>
