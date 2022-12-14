@@ -11,7 +11,7 @@ import RegisterPage from './components/register';
 import ProfileScreen from './components/profile';
 import EditProfile from './components/editProfile/EditProfile';
 import AdminPage from './components/admin';
-import SearchPage from './components/search/singlePage';
+import SearchPage from './components/search/searchPage';
 
 ReactDOM.render(
   <React.StrictMode>
