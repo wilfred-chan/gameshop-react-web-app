@@ -9,9 +9,37 @@ import {
   Typography
 } from '@mui/material';
 import {useUIContext} from "../../context/ui";
+import { UserContext } from "../../context/user";
+import { useContext } from "react";
 
 export default function Cart() {
+  const {user, setUser} = useContext(UserContext);
   const {cart, setShowCart, showCart} = useUIContext();
+
+  if (user.loggedIn === false) {
+    return (
+    <Drawer
+      open = {showCart}
+      onClose = {() => setShowCart(false)}
+      anchor="right"
+      PaperProps={{sx : {
+      width:500, background: Colors.light_gray, borderRadius: 0
+      },}}>
+      <Box
+        sx ={{p:4}}
+        display="flex"
+        justifyContent={"center"}
+        flexDirection="column"
+        alignItems = "center"
+        >
+        <Typography variant="h3" color = {Colors.black}>
+          Please login!
+        </Typography>
+      </Box>
+    </Drawer>)
+  } else {
+  }
+
   const cartContent = cart.map(item => (
       <Box key = {item.game_id}>
         <Box display="flex" sx ={{pt:2, pb : 2}}
