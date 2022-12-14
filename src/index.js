@@ -8,7 +8,7 @@ import LoginPage from './components/login';
 import { UserContextProvider } from './context/user';
 import RegisterPage from './components/register';
 import ProfileScreen from './components/profile';
-import EditProfile from './components/editProfile/CustomerCardEditProfile'
+import EditProfile from './components/editProfile/EditProfile'
 
 
 ReactDOM.render(
