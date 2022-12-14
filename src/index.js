@@ -11,6 +11,7 @@ import RegisterPage from './components/register';
 import ProfileScreen from './components/profile';
 import EditProfile from './components/editProfile/EditProfile';
 import AdminPage from './components/admin';
+import SearchPage from './components/search/singlePage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.render(
             <Route path="profile" element={<ProfileScreen />} />
             <Route path="edit_profile" element={<EditProfile />} />
             <Route path="admin" element={<AdminPage />} />
+            <Route path="search" element={<SearchPage />} />
           </Routes>
         </UIProvider>
       </UserContextProvider>
