@@ -43,7 +43,7 @@ const ProductPage = () => {
                     </div>
                 </div>
 
-                <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+                <ImageList sx={{ width: 1120, height: 450 }} cols={6} rowHeight={164}>
                     {game.screenshots && game.screenshots.map((item) => (
                         <ImageListItem key={item.img}>
                             <img
