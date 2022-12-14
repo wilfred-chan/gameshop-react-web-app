@@ -1,0 +1,21 @@
+.product-page-card-img {
+    width: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}
+
+.product-page-card-img img{
+    height: 24rem;
+    width: 19rem;
+    margin-bottom: 2rem;
+    border: 5px solid black;
+}
+
+.product-page-card-info {
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}

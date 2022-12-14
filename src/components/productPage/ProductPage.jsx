@@ -12,6 +12,8 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import {useContext, useEffect, useState} from "react";
 import {UIContext} from "../../context/ui";
 import axios from "axios";
+import './index.css'
+import {ImageList, ImageListItem} from "@mui/material";
 
 const ProductPage = () => {
     const { game_id } = useParams();
@@ -32,22 +34,68 @@ const ProductPage = () => {
 
     return (
         <Grid container>
-            <Grid item xs={6}>
-                <div className="product_page">
+            <Grid item xs={7}>
+                <div className="product-page-card-img">
                     <div className="row">
-                        <div className="col-5">
+                        <div className="col-12">
                             <img src={game.cover_image}></img>
                         </div>
                     </div>
                 </div>
+
+                <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+                    {game.screenshots.map((item) => (
+                        <ImageListItem key={item.img}>
+                            <img
+                                src={`${item}?w=164&h=164&fit=crop&auto=format`}
+                                srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                alt={item.title}
+                                loading="lazy"
+                            />
+                        </ImageListItem>
+                    ))}
+                </ImageList>
             </Grid>
-            <Grid item xs={6}>
-                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                    <ListItem>
-                        <ListItemText primary="Game" secondary={game.title} />
-                        <ListItemText primary="Price" secondary={game.price} />
-                        <ListItemText primary="Description" secondary={game.price} />
-                    </ListItem>
+            <Grid item xs={5}>
+                <List sx={{ width: '100%', maxWidth: 800}}>
+                    <div className="product-page-card-info">
+                        <ListItem>
+                            <div className="col-6 center">
+                                <div className="p-3 mb-2 bg-light text-dark">
+                                    <span><ListItemText primary="Game" secondary={game.title} /></span>
+                                </div>
+                            </div>
+
+                            <div className="col-6 center">
+                                <div className="p-3 mb-2 bg-light text-dark">
+                                    <ListItemText primary="Price" secondary={"$"+game.price} />
+                                </div>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div className="col-6 center">
+                                <div className="p-3 mb-2 bg-light text-dark">
+                                    <ListItemText primary="Rate" secondary={game.rating} />
+                                </div>
+                            </div>
+
+                            <div className="col-6 center">
+                                <div className="p-3 mb-2 bg-light text-dark">
+                                    <ListItemText primary="ESRB rate" secondary={game.esrb_rating} />
+                                </div>
+                            </div>
+                        </ListItem>
+                    </div>
+
+                    <div className="product-page-card-info">
+                        <ListItem>
+                            <div className="col-lg-12 center">
+                                <div className="p-3 mb-2 bg-light text-dark">
+                                    <span><ListItemText primary="Description" secondary={game.description} /></span>
+                                </div>
+                            </div>
+                        </ListItem>
+                    </div>
                 </List>
             </Grid>
         </Grid>
