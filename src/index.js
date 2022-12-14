@@ -8,6 +8,7 @@ import LoginPage from './components/login';
 import { UserContextProvider } from './context/user';
 import RegisterPage from './components/register';
 import ProfileScreen from './components/profile';
+import EditProfile from './components/editProfile/EditProfile'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="profile" element={<ProfileScreen />} />
+          <Route path="edit_profile" element={<EditProfile />} />
         </Routes>
       </UserContextProvider>
     </BrowserRouter>

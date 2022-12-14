@@ -9,7 +9,7 @@ const CustomerProfile = () => {
   return (
     <div>
       <header>
-        <Link to="/"><button>Back to Home</button></Link>
+        <Link to="/"><button className="btn btn-secondary">Back to Home</button></Link>
       </header>
       <section>
         <div>

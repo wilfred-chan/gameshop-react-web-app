@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../context/user';
 import './index.css'
+import {Link} from "react-router-dom";
 
 const CustomerCard = ({
 
@@ -14,10 +15,10 @@ const CustomerCard = ({
           <div>
             <img src={user.image_url} alt="" />
           </div>
-          <h3 >{user.username}</h3>
-          <span className="badge rounded-pill bg-primary disabled">{user.role}</span>
-          <p >{user.bio}</p>
-          <button >Edit Profile</button>
+          <h3>{user.username}</h3>
+          <span className="badge badge-success">{user.role}</span>
+          <p className="text-black">{user.bio}</p>
+          <Link to="/edit_profile"><button className="btn btn-secondary">Edit Profile</button></Link>
         </div>
       </div>
     </>

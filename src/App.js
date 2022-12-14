@@ -9,6 +9,7 @@ import {UIProvider} from "./context/ui";
 import SearchBox from "./components/search";
 import Cart from "./components/cart";
 import Favorites from "./components/favorites/index"
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import RegisterPage from "./components/register";
 // import LoginPage from "./components/login";
 
