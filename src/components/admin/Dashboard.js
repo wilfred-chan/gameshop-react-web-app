@@ -25,7 +25,6 @@ export default function Dashboard() {
 
   return(
       <ThemeProvider theme={defaultMaterialTheme}>
-      <Box m="20px">
         <Box
             m="40px 0 0 0"
             height="75vh"
@@ -56,7 +55,6 @@ export default function Dashboard() {
               }}
           />
         </Box>
-      </Box>
       </ThemeProvider>
 
   );

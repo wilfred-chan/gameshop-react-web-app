@@ -32,7 +32,7 @@ export default function AdminActions() {
           </ListItemButton>
           <Divider orientation="vertical" flexItem />
 
-          <Link to={`${user.loggedIn ? 'profile':'login'}`}>
+
             <ListItemButton
                 sx={{
                   justifyContent: "center",
@@ -48,9 +48,9 @@ export default function AdminActions() {
                 <PersonIcon />
               </ListItemIcon>
             </ListItemButton>
-          </Link>
+
           <Divider orientation="vertical" flexItem />
-          {user.loggedIn &&
+
           <ListItemButton
               onClick={() => window.location.reload()}
               sx={{
@@ -67,7 +67,7 @@ export default function AdminActions() {
               <LogoutIcon />
             </ListItemIcon>
           </ListItemButton>
-          }
+
 
         </NavLinks>
       </ActionIconsContainer>
