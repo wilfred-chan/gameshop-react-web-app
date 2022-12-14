@@ -27,7 +27,7 @@ export const UIProvider = ({ children }) => {
         .catch(e => console.error(e));
     });
     
-    Promise.all(games).then(res => setCart(res));
+    Promise.all(games).then(data => setCart(data));
   }, [user]);
 
   const value = {
