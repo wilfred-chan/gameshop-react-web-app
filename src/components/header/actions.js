@@ -41,6 +41,7 @@ export default function Actions() {
             sx={{
               justifyContent: "center",
             }}
+            onClick={() => setShowFavorites(true)}
         >
           <ListItemIcon
               sx={{
@@ -50,7 +51,7 @@ export default function Actions() {
               }}
           >
               <Badge badgeContent = {favorites && favorites.length} color = "secondary">
-                  <FavoriteIcon onClick={() => setShowFavorites(true)}/>
+                  <FavoriteIcon/>
               </Badge>
           </ListItemIcon>
         </ListItemButton>
