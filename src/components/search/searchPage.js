@@ -9,7 +9,7 @@ import {
   Grid,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 import SearchResultItem from './searchResultItem';
@@ -32,7 +32,7 @@ export default function SearchPage() {
   return (
     <>
       <Container component="main" maxWidth="xs">
-        <Link to="/">Back to home</Link>
+        <Link to="/"><button className="col-10 btn btn-secondary">Back to Home</button></Link>
         <Typography component="h1" variant="h5" sx={{ mt: 1 }}>
           Search Games
         </Typography>

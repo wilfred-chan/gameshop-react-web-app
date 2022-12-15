@@ -34,3 +34,31 @@
     margin-bottom: 2rem;
     border: 5px solid black;
 }
+
+.other-customer-card-flex {
+    height: 400px;
+    width: 450px;
+    margin-left: 10px;
+    background-color: rgb(255,240,245);
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}
+
+.other-game-card {
+    background-color: rgb(128,128,128);
+}
+
+.other-game-card button {
+    background-color: rgba(255,255,255,0);
+    width: 430px;
+}
+
+.other-game-card h3 {
+    color: white;
+}
+
+
+.other-game-item {
+    width: 500px;
+}
