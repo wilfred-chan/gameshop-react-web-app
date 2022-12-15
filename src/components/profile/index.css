@@ -34,3 +34,16 @@
     margin-bottom: 2rem;
     border: 5px solid black;
 }
+
+.other-customer-card-flex {
+    width: auto;
+    min-width: 500px;
+    background-color: rgb(255,240,245);
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}
+
+.other-game-card h3 {
+    font-size:40px;
+}

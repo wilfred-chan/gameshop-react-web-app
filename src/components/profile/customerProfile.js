@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import CustomerCard from './customerCard';
 import CustomerDetails from "./customerDetails";
 import { Link } from 'react-router-dom';
 import CustomerCart from "../cart/customerCart";
+import OtherCustomerFavoritesList from "./otherCustomerFavoritesList";
 
 const CustomerProfile = () => {
     return (
@@ -20,6 +21,9 @@ const CustomerProfile = () => {
                     </div>
                     <div>
                         <CustomerCart />
+                    </div>
+                    <div>
+                        <OtherCustomerFavoritesList />
                     </div>
                 </div>
             </section>
