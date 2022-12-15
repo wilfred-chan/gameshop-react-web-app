@@ -1,11 +1,18 @@
 import { Box, Typography, } from "@mui/material";
 import {Colors} from "../../styles/theme";
 import LoginForm from "./form";
+import {Link} from "react-router-dom";
+import React from "react";
 
 const LoginPage = () => {
 
   return (
       <Box>
+          <Box>
+              <header>
+                  <Link to="/"><button className="btn btn-secondary">Back to Home</button></Link>
+              </header>
+          </Box>
         <Box
             width="100%"
             backgroundColor={Colors.primary}
