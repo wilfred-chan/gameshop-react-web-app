@@ -43,6 +43,7 @@ export default function SearchPage() {
           <HeaderBar>GameShop</HeaderBar>
           <ActionIconsContainer>
             <NavLinks type="row">
+            <Link to="/" >
               <ListItemButton
                   sx={{
                     justifyContent: "center",
@@ -55,15 +56,15 @@ export default function SearchPage() {
                       color: Colors.secondary,
                     }}
                 >
-                  <Link to="/" >
+                  
                     <HomeIcon sx={{
                       display: "flex",
                       justifyContent: "center",
                       color: Colors.secondary,
                     }}/>
-                  </Link>
-                </ListItemIcon>
-              </ListItemButton>
+                  </ListItemIcon>
+                </ListItemButton>
+              </Link>
 
             </NavLinks>
           </ActionIconsContainer>
