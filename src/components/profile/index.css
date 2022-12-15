@@ -36,14 +36,19 @@
 }
 
 .other-customer-card-flex {
-    width: auto;
-    min-width: 500px;
+    height: 400px;
+    width: 450px;
+    margin-left: 10px;
     background-color: rgb(255,240,245);
     display: flex;
     text-align: center;
     flex-flow: column;
 }
 
-.other-game-card h3 {
-    font-size:40px;
+.other-game-card {
+    background-color: rgb(211,211,211);
+}
+
+.other-game-item {
+    width: 500px;
 }

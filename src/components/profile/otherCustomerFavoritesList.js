@@ -26,9 +26,9 @@ const OtherCustomerFavoritesList = () => {
                     <div className="row">
                         {userDetails && userDetails.map((user) => (
                             // <p>{user.username}</p>
-                            <div className="row p-3 w-25 mb-2 bg-light text-dark" key={user.username}>
-                                <OtherCustomerCard className="col-4" user={user}/>
-                                <div className="col-8">
+                            <div className="row p-3 w-25 bg-light" key={user.username}>
+                                <OtherCustomerCard user={user}/>
+                                <div className="other-game-item">
                                     {user.favorites.map(game => <OtherCustomerItemCard game={game} />)}
                                 </div>
                             </div>

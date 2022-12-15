@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const OtherCustomerItemCard = ({game}) => {
     return (
         <>
-            <div className="other-game-card">
+            <div className="other-game-card center">
                 <div>
                     {/*<div>*/}
                     {/*    <img src={game.cover_image} alt="" />*/}
@@ -14,10 +14,7 @@ const OtherCustomerItemCard = ({game}) => {
                     {/*<div>${game.price}</div>*/}
 
                     <Link to={`/product/${game}`}>
-                        <div className="btn btn-info">
-                            {game}
-                        </div>
-                        {/*<button className="btn btn-info">{game}</button>*/}
+                            <h3>{game}</h3>
                     </Link>
 
                 </div>
