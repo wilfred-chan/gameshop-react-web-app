@@ -2,7 +2,7 @@ import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { Routes, Route, useParams } from 'react-router-dom';
+import {Routes, Route, useParams, Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid'
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
@@ -37,6 +37,9 @@ const ProductPage = () => {
     return (
         <Grid container>
             <Grid item xs={7}>
+                <header>
+                    <Link to="/profile"><button className="btn btn-secondary">Back to Profile</button></Link>
+                </header>
                 <div className="product-page-card-img">
                     <div className="row">
                         <div className="col-12">
@@ -59,7 +62,7 @@ const ProductPage = () => {
                 </ImageList>
             </Grid>
             <Grid item xs={5}>
-                <List sx={{ width: '100%', maxWidth: 800}}>
+                <List sx={{ marginTop:5, width: '100%', maxWidth: 800}}>
                     <div className="product-page-card-info">
                         <ListItem>
                             <div className="col-6 center">
