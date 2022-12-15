@@ -23,7 +23,7 @@ export const HeaderBar = styled(Typography)(() => ({
 export const NavLinks = styled(List)(({type}) => ({
   display : type === 'row' ? 'flex' :'block',
   flexGrow : 2,
-  justifyContent: 'center',
+  justifyContent: 'left',
   alignItems: 'center'
 }));
 
