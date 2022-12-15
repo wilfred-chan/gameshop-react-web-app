@@ -46,8 +46,18 @@
 }
 
 .other-game-card {
-    background-color: rgb(211,211,211);
+    background-color: rgb(128,128,128);
 }
+
+.other-game-card button {
+    background-color: rgba(255,255,255,0);
+    width: 430px;
+}
+
+.other-game-card h3 {
+    color: white;
+}
+
 
 .other-game-item {
     width: 500px;

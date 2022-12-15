@@ -14,7 +14,7 @@ const OtherCustomerItemCard = ({game}) => {
                     {/*<div>${game.price}</div>*/}
 
                     <Link to={`/product/${game}`}>
-                            <h3>{game}</h3>
+                        <button><h3>{game}</h3></button>
                     </Link>
 
                 </div>
