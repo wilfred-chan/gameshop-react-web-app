@@ -37,6 +37,7 @@ export default function SearchPage() {
   };
 
   return (
+
       <>
         <HeaderContainer>
           <HeaderBar>GameShop</HeaderBar>
