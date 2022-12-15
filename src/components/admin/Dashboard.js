@@ -19,7 +19,8 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const BASE_URL = 'https://gameshop.herokuapp.com/api/';
 const tableIcons = {
@@ -77,6 +78,9 @@ export default function Dashboard() {
                 />
               ),
             },
+            { title: 'Detail', 
+              render: (rowData) => <Link to={`/product/${rowData.game_id}`}><Button>Detail</Button></Link>
+            }
           ]}
           data={products}
           title="GameShop Stock"
