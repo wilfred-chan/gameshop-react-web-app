@@ -21,6 +21,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import {Colors} from "../../styles/theme";
 
 const BASE_URL = 'https://gameshop.herokuapp.com/api/';
 const tableIcons = {
@@ -87,6 +88,18 @@ export default function Dashboard() {
           icons={tableIcons}
           options={{
             search: true,
+            headerStyle: {
+              backgroundColor: Colors.primary,
+              color: Colors.white,
+            },
+            rowStyle: {
+              backgroundColor: Colors.secondary,
+              color: Colors.black,
+            },
+            style : {
+              backgroundColor:Colors.light,
+            }
+
           }}
           editable={{
             onRowAdd: newData =>
